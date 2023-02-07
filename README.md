@@ -1,6 +1,58 @@
-# Getting Started with Create React App
+# Farmer's Market
+
+View the [Live Deployment here](https://kirstenopstad.github.io/react-social-clone/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+#### By Kirsten Opstad & Robert Onstott
+
+#### A farmer's Market
+
+## Technologies Used
+
+* React
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
+* webpack
+* Node.js
+
+## Description
+
+A website that uses React and conditional rendering to display:
+* which location Avery's Organics will be at on a given day of the week
+* what produce is available during a given month
+
+Try using local state to toggle between different days. Note that we can use conditional rendering for as many conditions as we want — including all seven days of the week!
+
+### Process
+1. Created component drawing
+![Component Drawing](src/img/FarmersMarket.drawio.png)
+2. Establish Component Hierarchy:
+    * App.js
+      * Header.js – contains static site info
+      * LocationControl.js – show customers which market they will be at on a given day
+        * DayMenu.js – receives user input (click) to determine which location
+        * Location.js –  display location details
+      * ProduceControl.js – display what produce is available during which months
+        * MonthMenu.js – recieves user input (click) to determine which produce
+        * Produce.js – display produce avail
+
+### Objectives (MVP)
+
+<!-- [x] Screenshots
+
+![Screenshots](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.03bZmDGXaBhBYyxxp3Ls3gHaEA%26pid%3DApi&f=1&ipt=e980d57210242747a51c41421e1f09a6de3b1fdaeaadd297496787bb64e80c88&ipo=images) -->
+
+<!-- [Link to operational site](http://www.kirstenopstad.github.com/<REPOSITORY NAME>) -->
+
+### Goals
+1. Build all components
+2. Style components to match mock up
+3. Stretch: add maps or marquee features
+
+## Setup/Installation Requirements
 
 ## Available Scripts
 
