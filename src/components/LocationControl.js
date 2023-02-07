@@ -1,10 +1,11 @@
 import React from 'react';
 import Location from './Location.js'
-import DayMenu from './DayMenu.js'
+import DayButton from './DayButton.js'
+
 
 const marketSchedule = [  
   {  
-     day: "Sunday",
+    day: "Sunday",
      location: "Lents International",
      hours: "9:00am - 2:00pm",
      booth: "4A"
@@ -34,31 +35,49 @@ const marketSchedule = [
      booth: "6D"
   },
   {  
-     day: "Saturday",
-     location: "Beaverton",
-     hours: "10:00am - 1:30pm",
-     booth: "9G"
+    day: "Saturday",
+    location: "Beaverton",
+    hours: "10:00am - 1:30pm",
+    booth: "9G"
   }
  ];
- 
+// const d = marketSchedule[0];
 
-const LocationControl = () => {
-    // const specificDay = marketSchedule.foreach(el => {
-    //   if (el[day] === "Monday") {
-    //     return el; 
-    //   }
-    // TODO: Add conditional rendering logic
-    const d = marketSchedule[0];
+class LocationControl extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 3  
+    };
+    // this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick = (id) => {
+    this.setState({ index: id})
+  }
+
+  render(){   
+   let display; 
+   if (this.state.index != null) {
+      const d = marketSchedule[this.state.index];
+      display = <Location day = {d.day} location = {d.location} hours = {d.hours} booth = {d.booth}></Location>
+   } else {
+      display = <p>The farm store is located at a different farmer's market each day of the week</p>
+   }
     return (
       <React.Fragment>
-        {marketSchedule.map((element, index) =>
-          <DayMenu day = {element.day} key = {index} />
+      {marketSchedule.map((element, index) =>
+      <button key = {index} onClick={() => this.handleClick(index)}>{element.day}<br />{element.location}</button>
+      //   <DayButton day = {element.day} location = {element.location} key = {index} />
         )}
-        {/* <DayMenu /> */}
-        <Location day = {d.day} location = {d.location} hours = {d.hours} booth = {d.booth}></Location>
+        {display}   
       </React.Fragment>
     );
+  }
 }
+
+// const d = marketSchedule[0];
 
 
 export default LocationControl;

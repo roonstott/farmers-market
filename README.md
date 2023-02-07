@@ -33,10 +33,10 @@ Try using local state to toggle between different days. Note that we can use con
     * App.js
       * Header.js – contains static site info
       * LocationControl.js – show customers which market they will be at on a given day
-        * DayMenu.js – receives user input (click) to determine which location
+        * DayButton.js – receives user input (click) to determine which location
         * Location.js –  display location details
       * ProduceControl.js – display what produce is available during which months
-        * MonthMenu.js – recieves user input (click) to determine which produce
+        * MonthButton.js – recieves user input (click) to determine which produce
         * Produce.js – display produce avail
 
 ### Objectives (MVP)
@@ -50,7 +50,7 @@ Try using local state to toggle between different days. Note that we can use con
 ### Goals
 1. Build all components
 2. Style components to match mock up
-3. Stretch: add maps or marquee features
+3. Stretch: add maps or marquee features, use date object to default to today
 
 ## Setup/Installation Requirements
 
