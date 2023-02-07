@@ -51,6 +51,9 @@ const LocationControl = () => {
     const d = marketSchedule[0];
     return (
       <React.Fragment>
+        {marketSchedule.map((element, index) =>
+          <DayMenu day = {element.day} key = {index} />
+        )}
         {/* <DayMenu /> */}
         <Location day = {d.day} location = {d.location} hours = {d.hours} booth = {d.booth}></Location>
       </React.Fragment>
