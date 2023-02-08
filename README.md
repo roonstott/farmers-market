@@ -1,6 +1,6 @@
 # Farmer's Market
 
-<!-- View the [Live Deployment here](https://kirstenopstad.github.io/react-social-clone/). -->
+View the [Live Deployment here](https://kirstenopstad.github.io/farmers-market/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
