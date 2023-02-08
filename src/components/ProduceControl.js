@@ -1,5 +1,6 @@
 import React from "react";
 import Produce from "./Produce"
+import Button from "react-bootstrap/Button";
 
 // turn into a class component (from functional)
 // create construcor with default index value
@@ -291,21 +292,26 @@ class ProduceControl extends React.Component {
   }
   
   render() {
-    
+    const today = new Date(); 
     let display;
     if (this.state.index != null) {
       const m = availableProduce[this.state.index];
       display = <Produce month = {m.month} arr = {m.selection}/>
     } else {
-      display = <p>Our offerings are seasonally dependent</p>
+      const m = availableProduce[today.getMonth()];
+      display = <Produce month = {m.month} arr = {m.selection}/>
     }
 
     return (
       <React.Fragment>
-        {availableProduce.map((element, index) => 
-          <button key = {index} onClick ={() => this.handleClick(index)} >{element.month} </button>
-        )}
-        {display}
+      <div className="produce-section">
+         <div className="month-menu">
+            {availableProduce.map((element, index) => 
+               <Button className="month-button" variant="success" key = {index} onClick ={() => this.handleClick(index)} >{element.month} </Button>
+            )}
+         </div>
+            {display}
+      </div>
       </React.Fragment>
     );
   }

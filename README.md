@@ -1,6 +1,6 @@
 # Farmer's Market
 
-View the [Live Deployment here](https://kirstenopstad.github.io/react-social-clone/).
+<!-- View the [Live Deployment here](https://kirstenopstad.github.io/react-social-clone/). -->
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -33,10 +33,8 @@ Try using local state to toggle between different days. Note that we can use con
     * App.js
       * Header.js – contains static site info
       * LocationControl.js – show customers which market they will be at on a given day
-        * DayButton.js – receives user input (click) to determine which location
         * Location.js –  display location details
       * ProduceControl.js – display what produce is available during which months
-        * MonthButton.js – recieves user input (click) to determine which produce
         * Produce.js – display produce avail
 
 ### Objectives (MVP)

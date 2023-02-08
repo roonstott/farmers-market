@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+.month-menu {
+  display: flex;
+}
+
+.month-button {
+  margin: 2px;
+  height: 5em;
+}
+.day-menu {
+  display: flex;
+  width: auto;
+}
+
+.day-button {
+  margin: 2px;
+  height: 10em;
+}
+
+.day {
+  font-weight: 500;
+}
+
+.location {
+  font-weight: 200;
+}
+.produce-section {
+  max-width: 500px;
+  height: 40vh;
+}
+.location-section {
+  max-width: 500px;
+  height: 40vh;
+}

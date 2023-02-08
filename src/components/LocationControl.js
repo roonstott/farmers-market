@@ -1,5 +1,6 @@
 import React from 'react';
 import Location from './Location.js'
+import Button from 'react-bootstrap/Button';
 
 const marketSchedule = [  
   {  
@@ -56,20 +57,29 @@ class LocationControl extends React.Component {
   }
 
   render(){   
-   let display; 
+   let display;
+   const today = new Date(); 
    if (this.state.index != null) {
       const d = marketSchedule[this.state.index];
       display = <Location day = {d.day} location = {d.location} hours = {d.hours} booth = {d.booth}></Location>
    } else {
-      display = <p>The farm store is located at a different farmer's market each day of the week</p>
+      const d = marketSchedule[today.getDay()];
+      display = <Location day = {d.day} location = {d.location} hours = {d.hours} booth = {d.booth}></Location>
    }
     return (
       <React.Fragment>
-      {marketSchedule.map((element, index) =>
-      <button key = {index} onClick={() => this.handleClick(index)}>{element.day}<br />{element.location}</button>
-      //   <DayButton day = {element.day} location = {element.location} key = {index} />
-        )}
-        {display}   
+        <div className="location-section">
+          <div className="day-menu">
+          {marketSchedule.map((element, index) =>
+            <Button className="day-button" variant="success" key = {index} onClick={() => this.handleClick(index)}>
+              <span className="day">{element.day}</span>
+              <br />
+              <span className="location">{element.location}</span>
+              </Button>
+            )}
+          </div>
+          {display}   
+        </div>
       </React.Fragment>
     );
   }
