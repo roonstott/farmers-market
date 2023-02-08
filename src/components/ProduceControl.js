@@ -1,6 +1,11 @@
 import React from "react";
-import MonthButton from "./MonthButton"
 import Produce from "./Produce"
+
+// turn into a class component (from functional)
+// create construcor with default index value
+// add logic to render() block to display default message
+// migrate button creation to Produce Control, delete MonthButton
+// add onClick attribute to button
 
 const availableProduce = [  
   {  
@@ -271,15 +276,38 @@ const availableProduce = [
   }
 ];
 
-const ProduceControl = () => {
-  const m = availableProduce[0]
-  return (
-    <React.Fragment>
-      {availableProduce.map((element, index) => 
-        <MonthButton month = {element.month} key = {index} />
-      )}
-      <Produce month = {m.month} arr = {m.selection}/>
-    </React.Fragment>
-  );
+class ProduceControl extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: null
+    };
+  }
+
+  handleClick = (id) => {
+    this.setState({
+      index: id
+    })
+  }
+  
+  render() {
+    
+    let display;
+    if (this.state.index != null) {
+      const m = availableProduce[this.state.index];
+      display = <Produce month = {m.month} arr = {m.selection}/>
+    } else {
+      display = <p>Our offerings are seasonally dependent</p>
+    }
+
+    return (
+      <React.Fragment>
+        {availableProduce.map((element, index) => 
+          <button key = {index} onClick ={() => this.handleClick(index)} >{element.month} </button>
+        )}
+        {display}
+      </React.Fragment>
+    );
+  }
 }
 export default ProduceControl

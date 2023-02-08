@@ -1,7 +1,5 @@
 import React from 'react';
 import Location from './Location.js'
-import DayButton from './DayButton.js'
-
 
 const marketSchedule = [  
   {  
@@ -48,7 +46,7 @@ class LocationControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: 3  
+      index: null  
     };
     // this.handleClick = this.handleClick.bind(this);
   }
